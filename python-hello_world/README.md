@@ -1,0 +1,1 @@
+This directory is meant to be used to take the first steps in learning to program with python.
