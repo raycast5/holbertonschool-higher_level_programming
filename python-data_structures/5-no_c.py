@@ -4,6 +4,5 @@
 
 def no_c(my_string):
 
-    temp = my_string.translate({ord("c"): None})
-    temp2 = temp.translate({ord("C"): None})
-    return temp2
+    temp = my_string.translate({ord(i): None for i in "cC"})
+    return temp
