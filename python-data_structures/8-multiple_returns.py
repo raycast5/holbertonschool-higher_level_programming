@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""This function returns a tuple with the length of a string and its first character"""
+"""This function returns a tuple with the length
+    of a string and its first character"""
 
 
 def multiple_returns(sentence):
