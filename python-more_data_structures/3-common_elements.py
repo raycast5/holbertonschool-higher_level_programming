@@ -3,5 +3,4 @@
 
 
 def common_elements(set_1, set_2):
-    set_3 = {x for x in set_1 if x in set_2}
-    return set_3
+    return set_1 & set_2
