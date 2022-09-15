@@ -2,9 +2,6 @@
 """This function converts roman numerals to int"""
 
 
-import string
-
-
 def roman_to_int(roman_string):
     total = 0
     roman_dict = {"I": 1, "V": 5, "X": 10, "L": 50,
