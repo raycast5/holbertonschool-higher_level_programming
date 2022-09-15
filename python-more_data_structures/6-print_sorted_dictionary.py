@@ -3,6 +3,5 @@
 
 
 def print_sorted_dictionary(a_dictionary):
-    dict2 = dict(sorted(a_dictionary.items()))
-    for k, v in dict2.items():
+    for k, v in sorted(a_dictionary.items()):
         print(f"{k}: {v}")
