@@ -52,10 +52,11 @@ class Square:
         position = self.position
         if size == 0:
             print("")
-        for blank in range(position[1]):
-            print("")
-        for row in range(size):
-            for space in range(position[0]):
-                print(" ", end="")
-            for item in range(size):
-                print("#", end="" if item != size - 1 else "\n")
+        else:
+            for blank in range(position[1]):
+                print("")
+            for row in range(size):
+                for space in range(position[0]):
+                    print(" ", end="")
+                for item in range(size):
+                    print("#", end="" if item != size - 1 else "\n")
