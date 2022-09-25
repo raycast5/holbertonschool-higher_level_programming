@@ -50,12 +50,10 @@ class Square:
     def my_print(self):
         size = self.size
         position = self.position
-        if size == 0 or position[0] == 0:
+        if size == 0 or position[1] > 0:
             print("")
-        else:
-            for row in range(size):
-                for space in range(position[0]):
-                    print(" ", end="")
-                for item in range(size):
-                    print("#", end="")
-                print("")
+        for row in range(size):
+            for space in range(position[0]):
+                print(" ", end="")
+            for item in range(size):
+                print("#", end="" if item != size - 1 else "\n")
