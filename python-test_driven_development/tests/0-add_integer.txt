@@ -3,11 +3,48 @@ Returns the result of a plus b:
 Import the module:
 
  >>> add_integer = __import__("0-add_integer").add_integer
+ 
+Module docstring is present:
+
+ >>> y = __import__("0-add_integer").__doc__
+ >>> len(y) > 1
+ True
+
+Function docstring is present:
+
+ >>> f = __import__("0-add_integer").add_integer.__doc__
+ >>> len(f) > 1
+ True
 
 Works with integers:
 
 >>> add_integer(2, 2)
 4
+
+Missing argument b:
+
+>>> add_integer(4, )
+102
+
+Missing both arguments:
+
+>>> add_integer( )
+Traceback (most recent call last):
+    ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Check for overflow:
+
+>>> add_integer(float('inf'), 5)
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
+
+Check for Nan conversion:
+>>> add_integer(float('nan'))
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer
 
 Works with floats:
 

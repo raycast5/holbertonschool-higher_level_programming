@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""This module contins an addition function for testing"""
+
+
 def add_integer(a, b=98):
     """Adds two given integers or floats
 
