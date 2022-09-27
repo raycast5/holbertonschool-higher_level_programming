@@ -1,0 +1,57 @@
+Import function:
+    >>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+
+Test 1: Passing (matrix of ints, div=int):
+    >>> matrix_divided([[6, 5, 4], [2, 4, 8]], 2)
+    [[3.0, 2.5, 2.0], [1.0, 2.0, 4.0]]
+
+Test 2: Passing (matrix of ints, div=string):
+    >>> matrix_divided([[6, 5, 4], [2, 4, 8]], "five")
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
+Test 3: Passing (matrix of ints, div=0):
+    >>> matrix_divided([[6, 5, 4], [2, 4, 8]], 0)
+    Traceback (most recent call last):
+        ...
+    ZeroDivisionError: division by zero
+
+Test 4: Passing (matrix with string, div=2):
+    >>> matrix_divided([["red", "blue", "green"], [2, 4, 8]], 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test 5: Passing (matrix all values 0.0, div=inf):
+    >>> matrix_divided([[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]], float('inf'))
+    Traceback (most recent call last):
+        ...
+    ZeroDivisionError: division by zero
+
+Test 6: Passing (matrix of ints and one float inf, div=inf):
+    >>> matrix_divided([[float('inf'), 5, 4], [2, 4, 8]], float('inf'))
+    [[nan, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+Test 7: Passing (matrix of ints and one float inf, div=int):
+    >>> matrix_divided([[float('inf'), 5, 4], [2, 4, 8]], 2)
+    [[inf, 2.5, 2.0], [1.0, 2.0, 4.0]]
+
+Test 8: Missing  1 argument:
+    >>> matrix_divided(2)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Test 9: Missing all arguments:
+    >>> matrix_divided()
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+Test 10: Passing (matrix as not square, div=int):
+    >>> matrix_divided([[6, 5, 4], [2, 4, 5, 8]], 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: Each row of the matrix must have the same size
