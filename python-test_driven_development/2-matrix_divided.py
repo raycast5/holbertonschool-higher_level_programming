@@ -28,17 +28,19 @@ def matrix_divided(matrix, div):
             if type(row) is list:
                 row_length = len(matrix[0])
             else:
-                raise TypeError("matrix must be a matrix \
-                                (list of lists) of integers/floats")
+                raise TypeError("matrix must be a matrix " +
+                                "(list of lists) of integers/floats")
             if len(row) != row_length:
-                raise TypeError("Each row of the matrix \
-                                must have the same size")
+                raise TypeError("Each row of the matrix " +
+                                "must have the same size")
             else:
                 new_matrix_row = []
             for number in row:
                 if type(number) not in [int, float]:
-                    raise TypeError("matrix must be a matrix \
-                                    (list of lists) of integers/floats")
+                    raise TypeError("matrix must be a matrix " +
+                                    "(list of lists) of integers/floats")
+                elif type(div) not in [int, float]:
+                    raise TypeError("div must be a number")
                 elif number == 0 or div == 0:
                     raise ZeroDivisionError("division by zero")
                 else:
@@ -46,5 +48,5 @@ def matrix_divided(matrix, div):
             new_matrix.append(new_matrix_row)
         return new_matrix
     else:
-        raise TypeError("matrix must be a matrix \
-                        (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix " +
+                        "(list of lists) of integers/floats")
