@@ -1,0 +1,34 @@
+Import function:
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Test 1: Passing 2 strings:
+    >>> say_my_name("Raymond", "Colon")
+    My name is Raymond Colon
+
+Test 2: Passing only one parameter:
+    >>> say_my_name("Raymond")
+    My name is Raymond 
+
+Test 3: Passing no parameter:
+    >>> say_my_name()
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+Test 4: Passing int as first parameter:
+    >>> say_my_name(5, "Colon")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+Test 5: Passing int as second argument:
+    >>> say_my_name("Raymond", 5)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+Test 6: Passing one int and one float
+    >>> say_my_name(5, 6.0)
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
