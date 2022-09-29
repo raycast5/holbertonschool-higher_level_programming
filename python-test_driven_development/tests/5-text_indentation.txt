@@ -1,0 +1,27 @@
+Import function:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test1: Passing a string
+    >>> text_indentation("School: Holberton  Name? Ray.Colon")
+    School:
+    <BLANKLINE>
+    Holberton  Name?
+    <BLANKLINE>
+    Ray.
+    <BLANKLINE>
+    Colon
+
+Test 2: Passing an int
+    >>> text_indentation(250)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Test 3: Passing no argument
+    >>> text_indentation()
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Test 4: Passing empty string
+    >>> text_indentation("")

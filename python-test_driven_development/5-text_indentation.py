@@ -15,12 +15,10 @@ def text_indentation(text):
     TypeError: If text is not a string
 
     """
+
     if type(text) is not str:
-        raise TypeError("test must be a string")
+        raise TypeError("text must be a string")
     else:
-        str1 = text.replace(".", ".\n\n")
-        str2 = str1.replace(":", ":\n\n")
-        str3 = str2.replace("?", "?\n\n")
-        str4 = str3.replace("\n ", "\n")
-        str5 = str4.replace(" \n", "\n")
-        print(str5, end="")
+        for sep in ":.?":
+            text = (sep+"\n\n").join([row.strip() for row in text.split(sep)])
+        print(text, end="")
