@@ -35,3 +35,9 @@ Test 6: Passing a string
     Traceback (most recent call last):
         ...
     TypeError: size must be an integer
+
+Test 7: Passing number < 0
+    >>> print_square(-5)
+    Traceback (most recent call last):
+        ...
+    ValueError: size must be >= 0
