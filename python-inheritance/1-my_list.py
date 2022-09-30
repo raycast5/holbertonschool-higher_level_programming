@@ -3,9 +3,13 @@
 
 
 class MyList(list):
-    """A class that inherits from list"""
+    """
+    A class that inherits from list
+
+    Attributes: None
+    """
 
     def print_sorted(self):
         """Prints a sorted list of ints"""
 
-        print(self.sort)
+        print(sorted(self))
