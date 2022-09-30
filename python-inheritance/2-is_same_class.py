@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module contains a lookup function for testing"""
+"""This module contains a function for testing"""
 
 
 def is_same_class(obj, a_class):
