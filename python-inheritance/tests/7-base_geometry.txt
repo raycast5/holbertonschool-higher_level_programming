@@ -31,6 +31,7 @@ Test 4: Passing value < 0
     ValueError: distance must be greater than 0
 
 Test 5: Passing string as value
+    >>> bg.integer_validator("distance", "4")
     Traceback (most recent call last):
         ...
     TypeError: distance must be an integer
@@ -58,6 +59,12 @@ Test 9: Passing a set as value
 
 Test 10: Passing None as value
     >>> bg.integer_validator("distance", None)
+    Traceback (most recent call last):
+        ...
+    TypeError: distance must be an integer
+
+Test 11: Passing a tuple as value
+    >>> bg.integer_validator("distance", (4,))
     Traceback (most recent call last):
         ...
     TypeError: distance must be an integer
