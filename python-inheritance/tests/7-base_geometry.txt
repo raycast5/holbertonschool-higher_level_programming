@@ -1,0 +1,63 @@
+Import function:
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> bg = BaseGeometry()
+
+Test 1: Normal Usage (ints)
+    >>> bg.integer_validator("my_int", 12)
+    >>> bg.integer_validator("width", 89)
+
+Test 2: Trying to use area method
+    >>> bg.area()
+    Traceback (most recent call last):
+        ...
+    Exception: area() is not implemented
+
+Test 3: Missing one parameter
+    >>> bg.integer_validator("age")
+    Traceback (most recent call last):
+        ...
+    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+Test 3: Passing value as 0:
+    >>> bg.integer_validator("age", 0)
+    Traceback (most recent call last):
+        ...
+    ValueError: age must be greater than 0
+
+Test 4: Passing value < 0
+    >>> bg.integer_validator("distance", -4)
+    Traceback (most recent call last):
+        ...
+    ValueError: distance must be greater than 0
+
+Test 5: Passing string as value
+    Traceback (most recent call last):
+        ...
+    TypeError: distance must be an integer
+
+Test 6: Passing (4) as value
+    >>> bg.integer_validator("distance", (4))
+
+Test 7: Passing list as value
+    >>> bg.integer_validator("distance", [4])
+    Traceback (most recent call last):
+        ...
+    TypeError: distance must be an integer
+
+Test 8: Passing Boolean as value
+    >>> bg.integer_validator("distance", True)
+    Traceback (most recent call last):
+        ...
+    TypeError: distance must be an integer
+
+Test 9: Passing a set as value
+    >>> bg.integer_validator("distance", {4, 5})
+    Traceback (most recent call last):
+        ...
+    TypeError: distance must be an integer
+
+Test 10: Passing None as value
+    >>> bg.integer_validator("distance", None)
+    Traceback (most recent call last):
+        ...
+    TypeError: distance must be an integer
