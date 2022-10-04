@@ -18,10 +18,10 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-def to_json(self, attrs=None):
-    json_dic = self.__dict__
-    if type(attrs) is list:
-        if all(isinstance(s, str) for s in attrs):
-            return json_dic.fromkeys(attrs)
-    else:
-        return json_dic
+    def to_json(self, attrs=None):
+        json_dic = self.__dict__
+        if type(attrs) is list:
+            if all(isinstance(s, str) for s in attrs):
+                return json_dic.fromkeys(attrs)
+        else:
+            return json_dic
