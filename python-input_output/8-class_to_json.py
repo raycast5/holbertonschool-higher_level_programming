@@ -3,7 +3,7 @@
 
 
 def class_to_json(obj):
-    """ 
+    """
     Returns the dictionary description of a
     class with simple data structures for JSON
     serializing.
