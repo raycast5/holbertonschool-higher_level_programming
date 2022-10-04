@@ -28,5 +28,4 @@ class Student:
     
     def reload_from_json(self, json):
         for k, v in json.items():
-            if k in self.__dict__:
-                self.k = v
+            self.__dict__[k] = v
