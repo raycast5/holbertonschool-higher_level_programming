@@ -22,6 +22,6 @@ class Student:
         json_dic = self.__dict__
         if type(attrs) is list:
             if all(isinstance(s, str) for s in attrs):
-                return {k: v for k, v in json_dic.items if k in attrs}
+                return {k: v for k, v in json_dic.items() if k in attrs}
         else:
             return json_dic
