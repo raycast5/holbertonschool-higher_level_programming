@@ -21,8 +21,8 @@ def pascal_triangle(n):
             triangle.append([])
             triangle[row].append(1)
             for number in range(1, row):
-                triangle[row].append(triangle[row - 1][number - 1]
-                                     + triangle[row - 1][number])
+                triangle[row].append(triangle[row - 1][number - 1] +
+                                     triangle[row - 1][number])
             if row != 0:
                 triangle[row].append(1)
     return triangle
