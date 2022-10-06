@@ -110,3 +110,9 @@ class Rectangle(Base):
         for row in range(height):
             for item in range(width):
                 print("#", end="" if item != width - 1 else "\n")
+
+    def __str__(self):
+        """Returns a str representation of rectangle"""
+
+        return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - " +
+                f"{self.__width}/{self.__height}")
