@@ -122,13 +122,14 @@ class Rectangle(Base):
     def update(self, *args):
         """Updates parameters of Rectangle"""
 
-        if args[0]:
+        l_args = len(args)
+        if l_args >= 1:
             self.id = args[0]
-        if args[1]:
+        if l_args >= 2:
             self.width = args[1]
-        if args[2]:
+        if l_args >= 3:
             self.height = args[2]
-        if args[3]:
+        if l_args >= 4:
             self.x = args[3]
-        if args[4]:
+        if l_args >= 5:
             self.y = args[4]
