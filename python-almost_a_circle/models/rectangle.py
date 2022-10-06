@@ -105,11 +105,13 @@ class Rectangle(Base):
         """Prints a represenation of rectangle
             to std output"""
 
-        width = self.__width
-        height = self.__height
-        for row in range(height):
-            for item in range(width):
-                print("#", end="" if item != width - 1 else "\n")
+        for y in range(self.__y):
+            print("")
+        for row in range(self.__height):
+            for x in range(self.__x):
+                print(" ", end="")
+            for item in range(self.__width):
+                print("#", end="" if item != self.__width - 1 else "\n")
 
     def __str__(self):
         """Returns a str representation of rectangle"""
