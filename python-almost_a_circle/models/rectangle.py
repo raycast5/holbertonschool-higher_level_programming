@@ -100,3 +100,13 @@ class Rectangle(Base):
         """Returns the area of rectangle"""
 
         return self.__width * self.__height
+
+    def display(self):
+        """Prints a represenation of rectangle
+            to std output"""
+
+        width = self.__width
+        height = self.__height
+        for row in range(height):
+            for item in range(width):
+                print("#", end="" if item != width - 1 else "\n")
