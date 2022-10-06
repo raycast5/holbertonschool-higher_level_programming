@@ -120,29 +120,15 @@ class Rectangle(Base):
                 f"{self.__width}/{self.__height}")
 
     def update(self, *args, **kwargs):
-        """Updates parameters of Rectangle"""
-
-        l_args = len(args)
-        if l_args > 0:
-            if l_args >= 1:
-                self.id = args[0]
-            if l_args >= 2:
-                self.width = args[1]
-            if l_args >= 3:
-                self.height = args[2]
-            if l_args >= 4:
-                self.x = args[3]
-            if l_args >= 5:
-                self.y = args[4]
+        """Updates the instance attributes"""
+        arg_list = ["id", "width", "height", "x", "y"]
+        if args:
+            for a in range(len(args)):
+                setattr(self, arg_list[a], args[a])
         else:
             for k, v in kwargs.items():
-                if k == "id":
-                    self.id = v
-                if k == "width":
-                    self.width = v
-                if k == "height":
-                    self.height = v
-                if k == "x":
-                    self.x = v
-                if k == "y":
-                    self.y = v
+                setattr(self, k, v)
+
+    def to_dictionary(self):
+        """Returns the dictionary representation of Rectangle"""
+        return self.__dict__
