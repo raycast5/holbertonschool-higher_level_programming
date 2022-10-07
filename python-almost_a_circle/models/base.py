@@ -107,4 +107,6 @@ class Base:
                 new_list = cls.from_json_string(f.read())
                 [in_list.append(cls.create(**inst)) for inst in new_list]
         except Exception:
-            return new_list
+            pass
+        finally:
+            return in_list
