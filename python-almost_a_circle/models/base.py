@@ -89,9 +89,9 @@ class Base:
         Returns:
         Instance with all attributes already set:
         """
-        if cls is "Rectangle":
+        if cls.__name__ == "Rectangle":
             new_inst = cls(id=2, width=2, height=2, x=2, y=2)
-        elif cls is "Square":
+        elif cls.__name__ == "Square":
             new_inst = cls(id=2, size=2, x=2, y=2)
         new_inst.update(dictionary)
         return new_inst
