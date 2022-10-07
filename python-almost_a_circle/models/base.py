@@ -93,5 +93,5 @@ class Base:
             new_inst = cls(width=2, height=2, x=2, y=2)
         elif cls.__name__ == "Square":
             new_inst = cls(size=2, x=2, y=2)
-        new_inst.update(dictionary)
+        new_inst.update(**dictionary)
         return new_inst
