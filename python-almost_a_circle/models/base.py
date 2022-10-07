@@ -26,3 +26,10 @@ class Base:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        if list_objs is None:
+            list_objs = []
+        with open(cls.__name__, "w+", encoding="utf-8") as file1:
+            json.dump(list_objs, file1)
