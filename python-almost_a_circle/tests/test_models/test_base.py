@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""Unittest for max_integer([..])
-"""
+"""Unittest for Base Class"""
+
 import unittest
 from models.base import Base
+
 
 class TestBase(unittest.TestCase):
 
@@ -22,7 +23,6 @@ class TestBase(unittest.TestCase):
     def test_passed_id(self):
         """Test that it saves passed id"""
         self.assertEqual(self.b4.id, 69)
-
 
     def test_to_json(self):
         """Test json to string"""
