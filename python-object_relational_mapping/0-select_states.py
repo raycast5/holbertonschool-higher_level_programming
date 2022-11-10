@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Lists all states from database, sorted by id"""
+""" Lists all states from database, sorted by id """
 
 
 import MySQLdb
