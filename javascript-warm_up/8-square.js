@@ -5,7 +5,7 @@ const size = parseInt(process.argv[2]);
 let row = 'X';
 
 if (isNaN(size)) {
-  console.log('Missing number of occurrences');
+  console.log('Missing size');
 } else {
   for (let j = 1; j < size; j++) {
     row += 'X';
