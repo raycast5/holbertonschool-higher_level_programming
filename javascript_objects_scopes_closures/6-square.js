@@ -4,10 +4,6 @@
 const Square = require('./5-square');
 const Parent = Square;
 module.exports = class Square extends Parent {
-  constructor (size) {
-    super(size, size);
-  }
-
   charPrint (c) {
     if (c === undefined) {
       c = 'X';
