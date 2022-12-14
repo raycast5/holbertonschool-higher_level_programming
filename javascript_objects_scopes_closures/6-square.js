@@ -1,17 +1,18 @@
 #!/usr/bin/node
 // Creates a class Square that inherits from Square
 
-const Rectangle = require('./4-rectangle.js');
-module.exports = class Square extends Rectangle {
+const Square = require('./5-square');
+const Parent = Square;
+module.exports = class Square extends Parent {
   constructor (size) {
     super(size, size);
   }
 
   charPrint (c) {
+    if (c === undefined) {
+      c = 'X';
+    }
     for (let i = 0; i < this.width; i++) {
-      if (c === undefined) {
-        c = 'X';
-      }
       console.log(c.repeat(this.height));
     }
   }
