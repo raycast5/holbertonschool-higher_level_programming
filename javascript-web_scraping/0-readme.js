@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 // Reads a file and writes its contents to stdout
 
 const fs = require('fs');
