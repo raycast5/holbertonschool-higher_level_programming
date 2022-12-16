@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// Retreives count of SW appearances for given char id
+// Retreives count of SW appearances for char id 18
 
 const request = require('request');
 const url = process.argv[2];
