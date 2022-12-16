@@ -6,7 +6,7 @@ const url = process.argv[2];
 const filepath = process.argv[3];
 const fs = require('fs');
 
-request(url, function (error, response, body) {
+request(url, function (error, _response, body) {
   if (error) {
     console.log(error);
   } else {
