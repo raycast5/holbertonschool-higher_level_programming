@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// Writes a given string to given file
+// Gets status code from given website
 
 const request = require('request');
 const url = process.argv[2];
