@@ -1,23 +1,21 @@
 #!/usr/bin/node
-// Script that computes number of task completed by user
+// Retreives count of SW appearances for char id 18
 
 const request = require('request');
-const urlAPI = process.argv[2];
+const url = process.argv[2];
 
-request(urlAPI, (error, res, content) => {
+request(url, function (error, response, body) {
   if (error) {
-    console.error(error);
-    return;
-  }
-
-  const taskList = JSON.parse(content);
-  const completedTasks = {};
-
-  for (const task of taskList) {
-    if (task.completed) {
-      const userID = task.userId;
-      completedTasks[userID] = (completedTasks[userID] + 1 || 1);
+    console.log(error);
+  } else if (response.statusCode === 200) {
+    const tasks = JSON.parse(body);
+    const tasksComp = {};
+    for (const task of tasks) {
+      if (task.completed) {
+        const userID = task.userId;
+        tasksComp[userID] = (tasksComp[userID] + 1 || 1);
+      }
     }
+    console.log(tasksComp);
   }
-  console.log(completedTasks);
 });
